@@ -10,14 +10,19 @@
 }
 
 #root {
-  max-width: 100%;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 1440px;
 }
 
 body {
   font-family: $font-family-poppins;
-    color: $color-text-main;
+  color: $color-text-main;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: $color-text-main;
 }
