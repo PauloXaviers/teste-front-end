@@ -1,11 +1,13 @@
 import "./Header.scss";
-import { topBarBenefits, navigationItems } from "./headerData";
-
+import { topBarBenefits, navigationItems, actionIcons } from "./headerData";
 import logo from "../../assets/econverse-logo.png";
+import SearchBar from "../Search/SearchBar";
+
 const Header = () => {
   return (
     <header className="header">
       <div className="header-wrapper">
+
         <div className="header-top">
           {topBarBenefits.map((benefit) => (
             <div key={benefit.id}>
@@ -19,15 +21,27 @@ const Header = () => {
             </div>
           ))}
         </div>
+
         <div className="main-header">
           <img src={logo} alt="Imagem da empresa" />
-          <div className="container-actions"></div>
+
+          <SearchBar placeholder="O que você está buscando?" className="search-field" />
+
+          <div className="container-actions">
+            {actionIcons.map((item) => (
+              <button key={item.id} type="button" aria-label={item.label}>
+                <img src={item.img} aria-hidden="true" />
+              </button>
+            ))}
+          </div>
+
         </div>
         <div className="container-navbar">
+
           <nav className="navbar">
             {navigationItems.map((item) => (
               <a
-                id={item.label}
+                key={item.label}
                 href={item.link}
                 className={`${item.label === "Ofertas do Dia" && "highlight"}`}
               >
@@ -36,6 +50,7 @@ const Header = () => {
               </a>
             ))}
           </nav>
+
         </div>
       </div>
     </header>

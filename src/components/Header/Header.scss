@@ -41,12 +41,41 @@
   width: 100%;
   border-top: 1px solid #f0f0f0;
   border-bottom: 1px solid #f0f0f0;
+  gap: 10px;
   height: 72px;
   img {
     width: 139px;
     height: 41.3px;
   }
+
+  .search-field {
+    max-width: 630px;
+    height: 48px;
+    background-color: #f6f5f2;
+    background-image: url("../../assets/header-icons/search.png");
+    background-repeat: no-repeat;
+    background-position: 95%;
+    background-size: 28px;
+  }
+
+  .container-actions {
+    max-width: 216px;
+    width: 100%;
+    height: 32px;
+    @include mix.flex-between(center, row);
+    button {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+
+      img {
+        height: 32px;
+        width: 32px;
+      }
+    }
+  }
 }
+
 .container-navbar {
   width: 100%;
   height: 40px;
@@ -68,7 +97,7 @@
     font-size: var.$font-size-12;
     &.highlight {
       color: var.$color-primary-dark;
-      font-weight: var.$font-weight-bold;
+      font-weight: var.$font-weight-semibold;
     }
   }
 }
