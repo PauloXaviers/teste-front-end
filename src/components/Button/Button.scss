@@ -1,0 +1,56 @@
+@use "../../styles/variables" as *;
+
+.button {
+  width: 100%;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &--yellow {
+    background-color: $color-accent;
+    color: $color-brand-purple;
+  }
+  &--blue {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+  &--xs {
+    max-width: 144.69px;
+    height: 48px;
+    border-radius: 6px;
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+  }
+  &--sm {
+    max-width: 157px;
+    height: 42px;
+    color: #161615;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    line-height: 12px;
+    border-radius: 8px;
+  }
+  &--md {
+    max-width: 206px;
+    height: 50px;
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    border-radius: 5px;
+  }
+  &--lg {
+    max-width: 275.85px;
+    height: 44px;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    border-radius: 4px;
+  }
+  &:hover {
+    opacity: 0.9;
+  }
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
