@@ -1,5 +1,6 @@
 import "./Home.scss";
 import { Banner } from "../../components/HeroBanner";
+import Button from "../../components/Button/Button";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
           <Banner.Subtitle as="p" className="banner-subtitle">
             <span>50% Off</span> nos produtos
           </Banner.Subtitle>
+          <Button type="button" variant="yellow" size="md"> Ver produto </Button>
         </div>
       </Banner.Root>
     </main>
