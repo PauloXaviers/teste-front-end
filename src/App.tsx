@@ -1,9 +1,10 @@
 import "./App.scss";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <>
-      <h1>Teste Econverse</h1>
+      <Header />
     </>
   );
 }

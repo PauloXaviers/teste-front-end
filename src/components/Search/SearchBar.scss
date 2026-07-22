@@ -1,0 +1,18 @@
+@use "../../styles/variables" as *;
+
+.search-bar-input {
+  width: 100%;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: $font-size-sm;
+  color: $color-gray-medium;
+  font-weight: $font-weight-medium;
+  font-family: $font-family-poppins;
+  &::placeholder {
+    font-size: $font-size-sm;
+    color: $color-gray-medium;
+    font-weight: $font-weight-medium;
+    font-family: $font-family-poppins;
+  }
+}
