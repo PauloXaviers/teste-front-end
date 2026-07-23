@@ -18,9 +18,25 @@
       color: var.$color-primary;
       font-size: var.$font-size-xl;
       font-weight: var.$font-weight-bold;
+      &.has-line {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+
+        &::before,
+        &::after {
+          content: "";
+          width: 360px;
+          height: 1px;
+          background-color: #dedede;
+        }
+      }
     }
+
     .section-subtitle {
       width: 100%;
+      @include mix.flex-center(column);
       text-align: center;
       color: #3f3f40;
       font-size: var.$font-size-md;
@@ -30,6 +46,6 @@
   .section-content {
     width: 100%;
     @include mix.flex-between(center, row);
-    gap: auto;
+    gap: 24px;
   }
 }
