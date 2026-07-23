@@ -1,0 +1,52 @@
+@use "../../styles/mixins" as mix;
+@use "../../styles/variables" as var;
+
+.product-card {
+  width: 100%;
+  max-width: 304px;
+  min-width: 304px;
+  height: 500px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 3px 19px rgba(0, 0, 0, 0.22);
+  @include mix.flex-center(column);
+  gap: 10px;
+  .product-card-image {
+    width: 100%;
+    max-width: 278.1px;
+    height: 228px;
+    object-fit: contain;
+  }
+  .product-card-description {
+    font-weight: var.$font-weight-light;
+    font-size: var.$font-size-md;
+  }
+  .product-card-original-price {
+    font-weight: var.$font-weight-regular;
+    font-size: var.$font-size-base;
+    color: #808080;
+  }
+  .product-card-current-price{
+    font-weight: var.$font-weight-bold;
+    font-size: var.$font-size-lg;
+  }
+  .product-card-installment{
+    font-size: var.$font-size-12;
+    font-weight: var.$font-weight-regular;
+  }
+  .product-card-shipping{
+    color: var.$color-primary;
+    font-size: var.$font-size-12;
+    font-weight: var.$font-weight-regular;
+  }
+
+  .product-card-description,
+  .product-card-original-price,
+  .product-card-current-price,
+  .product-card-installment,
+  .product-card-shipping {
+    width: 100%;
+    max-width: 278px;
+  }
+}
