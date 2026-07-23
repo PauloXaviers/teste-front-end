@@ -2,14 +2,14 @@ import "./Home.scss";
 import { Banner } from "../../components/HeroBanner";
 import Button from "../../components/Button/Button";
 import CategoryGrid from "../../components/CategoryGrid/CategoryGrid";
-import { categories } from "../../data/categories";
-import { useState } from "react";
+import { categories, categoryTabs } from "../../data/categories";
+import { useProducts } from "../../hooks/useProducts";
+import { Section } from "../../components/Section";
+import CategoryTabs from "../../components/CategoryTabs/CategoryTabs";
 
-const Home = () => {  
-  const [activeCategoryId, setActiveCategoryId] = useState<string>( categories[0]?.id || "");
+const Home = () => {
+  const { activeCategoryId, activeTabId, selectCategory, selectTab } = useProducts();
 
-  const handleCategoryClick = (categoryId: string) => setActiveCategoryId(categoryId);
-  
   return (
     <main className="home">
       <Banner.Root className="container-banner">
@@ -29,8 +29,21 @@ const Home = () => {
       <CategoryGrid
         category={categories}
         activeCategoryId={activeCategoryId}
-        onCategoryClick={handleCategoryClick}
+        onCategoryClick={selectCategory}
       />
+
+      <Section.Root className="section-products">
+        <Section.Header>
+          <Section.Title hasLine>Produtos relacionados</Section.Title>
+          <Section.Subtitle as="div">
+            <CategoryTabs
+              onTabSelect={selectTab}
+              activeTabId={activeTabId}
+              categoryTabs={categoryTabs}
+            />
+          </Section.Subtitle>
+        </Section.Header>
+      </Section.Root>
     </main>
   );
 };
