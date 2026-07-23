@@ -1,0 +1,26 @@
+@use "../../styles/mixins" as mix;
+@use "../../styles/variables" as var;
+
+.category-tabs {
+  width: 100%;
+  max-width: 1280px;
+  height: 40px;
+  @include mix.flex-between(center, row);
+  .button-tab {
+    width: 100%;
+    max-width: 214.17px;
+    height: 100%;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #bdbdbd;
+    color: #3b3b3b;
+    font-size: var.$font-size-base;
+    line-height: 16px;
+    font-weight: var.$font-weight-regular;
+    text-transform: uppercase;
+    &.active {
+      color: var.$color-primary;
+      font-weight: var.$font-weight-bold;
+    }
+  }
+}
