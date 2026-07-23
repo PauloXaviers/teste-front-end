@@ -1,0 +1,36 @@
+@use "../../styles/mixins" as mix;
+@use "../../styles/variables" as var;
+
+.partner-banner {
+  width: 100%;
+  max-width: 634px;
+  height: 350px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.35) 45%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    var(--partner-banner-background-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include mix.flex-center(column);
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 30px;
+  gap: 10px;
+  h2 {
+    color: var.$color-white;
+    font-size: var.$font-size-3xl;
+    font-weight: var.$font-weight-bold;
+  }
+  p {
+    font-size: var.$font-size-base;
+    color: var.$color-white;
+    font-weight: var.$font-weight-regular;
+    max-width: 30%;
+  }
+}

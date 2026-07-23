@@ -6,9 +6,13 @@ import { categories, categoryTabs } from "../../data/categories";
 import { useProducts } from "../../hooks/useProducts";
 import CategoryTabs from "../../components/CategoryTabs/CategoryTabs";
 import ProductsSection from "../../components/ProductsSection/ProductsSection";
+import PartnerBanner from "../../components/PartnerBanner/PartnerBanner";
+import partnerBannerImg from "../../assets/partner-banner.png";
+import { Section } from "../../components/Section";
 
 const Home = () => {
-  const { activeCategoryId, activeTabId, selectCategory, selectTab, products, selectProduct} = useProducts();
+  const { activeCategoryId, activeTabId, selectCategory, selectTab, products, selectProduct } =
+    useProducts();
 
   return (
     <main className="home">
@@ -45,6 +49,23 @@ const Home = () => {
         onBuy={selectProduct}
       />
 
+      <Section.Root className="partner-brand-section">
+        <Section.Content>
+          <PartnerBanner
+            title="Parceiros"
+            description="Lorem ipsum dolor sit amet, consectetur"
+            buttonText="CONFIRA"
+            backgroundImg={partnerBannerImg}
+          />
+          <PartnerBanner
+            title="Parceiros"
+            description="Lorem ipsum dolor sit amet, consectetur"
+            buttonText="CONFIRA"
+            backgroundImg={partnerBannerImg}
+          />
+        </Section.Content>
+      </Section.Root>
+
       <ProductsSection
         title="Produtos relacionados"
         subtitle="Ver produtos"
@@ -52,6 +73,23 @@ const Home = () => {
         onBuy={selectProduct}
       />
 
+      <Section.Root className="partner-brand-section">
+        <Section.Content>
+          <PartnerBanner
+            title="Parceiros"
+            description="Lorem ipsum dolor sit amet, consectetur"
+            buttonText="CONFIRA"
+            backgroundImg={partnerBannerImg}
+          />
+          <PartnerBanner
+            title="Parceiros"
+            description="Lorem ipsum dolor sit amet, consectetur"
+            buttonText="CONFIRA"
+            backgroundImg={partnerBannerImg}
+          />
+        </Section.Content>
+      </Section.Root>
+      
       <ProductsSection
         title="Produtos relacionados"
         subtitle="Ver produtos"
