@@ -5,13 +5,7 @@ import tecnologiaIcon from "../assets/category-icons/tecnologia.png";
 import bebidasIcon from "../assets/category-icons/whiskey.png";
 import supermercadosIcon from "../assets/category-icons/supermercados.png";
 import modaIcon from "../assets/category-icons/moda.png";
-
-interface Category {
-  id: string;
-  label: string;
-  icon: string;
-  alt: string;
-}
+import type { Category } from "../types/category";
 
 export const categories: Category[] = [
   {

@@ -1,0 +1,35 @@
+@use "../../styles/mixins" as mix;
+@use "../../styles/variables" as var;
+
+.container-category {
+  width: 100%;
+  max-width: 1160px;
+  @include mix.flex-between(center, row);
+  gap: 42px;
+
+  .container-buttons {
+    @include mix.flex-center(column);
+    gap: 22px;
+
+    button {
+      width: 128px;
+      height: 128px;
+      border-radius: 10px;
+      background-color: #f4f4f4;
+      box-shadow: 0 4px 11px rgba(0, 0, 0, 0.13);
+      &.active {
+        background-color: var.$color-white;
+        box-shadow: 0 2px 9px rgba(0, 0, 0, 0.22);
+      }
+    }
+    span {
+      color: #4e4e4e;
+      font-size: var.$font-size-sm;
+      font-weight: var.$font-weight-medium;
+      &.active {
+        color: var.$color-primary-dark;
+        font-weight: var.$font-weight-semibold;
+      }
+    }
+  }
+}
