@@ -4,3 +4,8 @@ export interface Category {
   icon: string;
   alt: string;
 }
+
+export interface CategoryTab {
+  id: string;
+  label: string;
+}

@@ -5,7 +5,7 @@ import tecnologiaIcon from "../assets/category-icons/tecnologia.png";
 import bebidasIcon from "../assets/category-icons/whiskey.png";
 import supermercadosIcon from "../assets/category-icons/supermercados.png";
 import modaIcon from "../assets/category-icons/moda.png";
-import type { Category } from "../types/category";
+import type { Category, CategoryTab } from "../types/category";
 
 export const categories: Category[] = [
   {
@@ -49,5 +49,32 @@ export const categories: Category[] = [
     label: "Moda",
     icon: modaIcon,
     alt: "Icone de roupa para a categoria Moda",
+  },
+];
+
+export const categoryTabs: CategoryTab[] = [
+  {
+    id: "celular",
+    label: "Celular",
+  },
+  {
+    id: "acessórios",
+    label: "Acessórios",
+  },
+  {
+    id: "tablets",
+    label: "Tablets",
+  },
+  {
+    id: "notebooks",
+    label: "Notebooks",
+  },
+  {
+    id: "tvs",
+    label: "TVs",
+  },
+  {
+    id: "todos",
+    label: "Ver todos",
   },
 ];
