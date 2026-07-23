@@ -4,11 +4,11 @@ import Button from "../../components/Button/Button";
 import CategoryGrid from "../../components/CategoryGrid/CategoryGrid";
 import { categories, categoryTabs } from "../../data/categories";
 import { useProducts } from "../../hooks/useProducts";
-import { Section } from "../../components/Section";
 import CategoryTabs from "../../components/CategoryTabs/CategoryTabs";
+import ProductsSection from "../../components/ProductsSection/ProductsSection";
 
 const Home = () => {
-  const { activeCategoryId, activeTabId, selectCategory, selectTab } = useProducts();
+  const { activeCategoryId, activeTabId, selectCategory, selectTab, products, selectProduct} = useProducts();
 
   return (
     <main className="home">
@@ -32,18 +32,32 @@ const Home = () => {
         onCategoryClick={selectCategory}
       />
 
-      <Section.Root className="section-products">
-        <Section.Header>
-          <Section.Title hasLine>Produtos relacionados</Section.Title>
-          <Section.Subtitle as="div">
-            <CategoryTabs
-              onTabSelect={selectTab}
-              activeTabId={activeTabId}
-              categoryTabs={categoryTabs}
-            />
-          </Section.Subtitle>
-        </Section.Header>
-      </Section.Root>
+      <ProductsSection
+        title="Produtos relacionados"
+        subtitle={
+          <CategoryTabs
+            onTabSelect={selectTab}
+            activeTabId={activeTabId}
+            categoryTabs={categoryTabs}
+          />
+        }
+        products={products}
+        onBuy={selectProduct}
+      />
+
+      <ProductsSection
+        title="Produtos relacionados"
+        subtitle="Ver produtos"
+        products={products}
+        onBuy={selectProduct}
+      />
+
+      <ProductsSection
+        title="Produtos relacionados"
+        subtitle="Ver produtos"
+        products={products}
+        onBuy={selectProduct}
+      />
     </main>
   );
 };
