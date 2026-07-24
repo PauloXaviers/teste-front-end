@@ -35,3 +35,16 @@
   max-width: 1281px;
   height: 50vh;
 }
+
+.brands-section {
+  max-width: 1250px;
+  height: 35vh;
+  margin-bottom: 80px;
+}
+
+.brands-section-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
