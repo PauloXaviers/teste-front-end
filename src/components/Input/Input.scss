@@ -1,0 +1,31 @@
+@use "../../styles/variables" as var;
+
+.label {
+  font-size: var.$font-size-sm;
+  color: var.$color-white;
+  font-weight: var.$font-weight-semibold;
+}
+
+.input-field-control {
+  width: 100%;
+  max-width: 233px;
+  height: 42px;
+  padding: 14px 18px;
+  border-radius: 8px;
+  border: 1px solid #e7e7e7;
+  font-size: var.$font-size-sm;
+  font-family: var.$font-family-poppins;
+  color: #676767;
+  background-color: var.$color-white;
+  font-weight: var.$font-weight-regular;
+}
+
+.input-field-control::placeholder {
+  color: var.$color-gray-medium;
+  font-weight: var.$font-weight-medium;
+}
+
+.input-field-control:focus {
+  outline: 2px solid var.$color-accent;
+  outline-offset: 2px;
+}

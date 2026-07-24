@@ -11,6 +11,7 @@ import partnerBannerImg from "../../assets/partner-banner.png";
 import { Section } from "../../components/Section";
 import { brands } from "../../data/brands";
 import BrandCard from "../../components/BrandCard/BrandCard";
+import Newsletter from "../../components/Newsletter/Newsletter";
 
 const Home = () => {
   const { activeCategoryId, activeTabId, selectCategory, selectTab, products, selectProduct } =
@@ -111,6 +112,10 @@ const Home = () => {
         subtitle="Ver produtos"
         products={products}
         onBuy={selectProduct}
+      />
+      <Newsletter
+        title="Inscreva-se na nossa newsletter"
+        subtitle="Assine a nossa newsletter e receba as novidades e conteúdos exclusivos da Econverse."
       />
     </main>
   );
