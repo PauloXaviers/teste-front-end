@@ -9,6 +9,8 @@ import ProductsSection from "../../components/ProductsSection/ProductsSection";
 import PartnerBanner from "../../components/PartnerBanner/PartnerBanner";
 import partnerBannerImg from "../../assets/partner-banner.png";
 import { Section } from "../../components/Section";
+import { brands } from "../../data/brands";
+import BrandCard from "../../components/BrandCard/BrandCard";
 
 const Home = () => {
   const { activeCategoryId, activeTabId, selectCategory, selectTab, products, selectProduct } =
@@ -89,7 +91,21 @@ const Home = () => {
           />
         </Section.Content>
       </Section.Root>
-      
+
+      <Section.Root className="brands-section">
+        <Section.Header>
+          <Section.Title>Navegue por marcas</Section.Title>
+        </Section.Header>
+
+        <Section.Content>
+          <div className="brands-section-list">
+            {brands.map((brand) => (
+              <BrandCard key={brand.id} brand={brand} />
+            ))}
+          </div>
+        </Section.Content>
+      </Section.Root>
+
       <ProductsSection
         title="Produtos relacionados"
         subtitle="Ver produtos"
