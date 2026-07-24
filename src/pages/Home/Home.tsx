@@ -12,10 +12,20 @@ import { Section } from "../../components/Section";
 import { brands } from "../../data/brands";
 import BrandCard from "../../components/BrandCard/BrandCard";
 import Newsletter from "../../components/Newsletter/Newsletter";
+import Modal from "../../components/Modal/Modal";
+import { formatPrice } from "../../utils/product-formatters";
 
 const Home = () => {
-  const { activeCategoryId, activeTabId, selectCategory, selectTab, products, selectProduct } =
-    useProducts();
+  const {
+    activeCategoryId,
+    activeTabId,
+    selectCategory,
+    selectTab,
+    products,
+    selectProduct,
+    selectedProduct,
+    closeModal,
+  } = useProducts();
 
   return (
     <main className="home">
@@ -113,6 +123,24 @@ const Home = () => {
         products={products}
         onBuy={selectProduct}
       />
+
+      {selectedProduct && (
+        <Modal onClose={closeModal}>
+          <div className="modal-product-details">
+            <img
+              src={selectedProduct?.photo}
+              alt={selectedProduct?.productName}
+              className="modal-product-image"
+            />
+            <div className="modal-product-info">
+              <p>{selectedProduct?.productName}</p>
+              <p>{selectedProduct?.descriptionShort}</p>
+              <p>Preço: R$ {formatPrice(selectedProduct?.price)}</p>
+            </div>
+          </div>
+        </Modal>
+      )}
+
       <Newsletter
         title="Inscreva-se na nossa newsletter"
         subtitle="Assine a nossa newsletter e receba as novidades e conteúdos exclusivos da Econverse."

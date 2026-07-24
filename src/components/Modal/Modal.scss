@@ -1,0 +1,56 @@
+@use "../../styles/variables" as var;
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.54);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  z-index: 999;
+}
+
+.modal-panel {
+  position: relative;
+  width: min(100%, 769px);
+  max-height: min(100%, 299.26px);
+  background-color: var.$color-white;
+  border-radius: 6px;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.modal-close-button img {
+  width: 16px;
+  height: 16px;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 28px 18px;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: var.$font-size-xl;
+  font-weight: var.$font-weight-bold;
+  color: #171717;
+}
+
+.modal-body {
+  padding: 24px 28px 28px;
+  overflow-y: auto;
+}

@@ -30,6 +30,7 @@ export const useProducts = () => {
   const selectTab = (tabId: string) => setActiveTabId(tabId);
 
   const selectProduct = (product: Product) => setSelectedProduct(product);
+  const closeModal = () => setSelectedProduct(null);
 
   return {
     activeCategoryId,
@@ -41,5 +42,6 @@ export const useProducts = () => {
     selectCategory,
     selectTab,
     selectProduct,
+    closeModal,
   };
 };

@@ -1,4 +1,5 @@
 @use "../../styles/variables" as var;
+@use "../../styles/mixins" as mix;
 
 .home {
   width: 100%;
@@ -31,7 +32,7 @@
     }
   }
 }
-.partner-brand-section{
+.partner-brand-section {
   max-width: 1281px;
   height: 50vh;
 }
@@ -47,4 +48,8 @@
   display: flex;
   justify-content: space-between;
   gap: 24px;
+}
+
+.modal-product-details {
+  @include mix.flex-between(center, row);
 }
